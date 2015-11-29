@@ -123,9 +123,10 @@ hr {
   display:block;
   padding:3px;
   background-color:#fff;
+  background-image: url(../img/logo.png)
   color:#3B5999;
-  height:28px;
-  width:28px;
+  height:26px;
+  width:110px;
   margin:9px;
   margin-right:2px;
   margin-left:15px;
@@ -356,7 +357,7 @@ html .fc, .fc table {
 }
 .fc-header-right {
 	text-align: right;
-	position: absolute;
+	/**position: absolute;**/
 	top: -34px;
 	right: 10px
 }
@@ -367,7 +368,7 @@ html .fc, .fc table {
 .fc-header-title h2 {
 	margin-top: 0;
 	white-space: nowrap;
-	font-size: 1.1rem;
+	font-size: 15px;
 	color: #6C737F;
 	line-height: 55px;
 }
@@ -747,3 +748,37 @@ height: 16px;
 width: 11px;}
 
 /* Full Calendar - End */
+/* Chat*/
+.chat {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #999;
+}
+
+.chat li.left .chat-body {
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+    margin-right: 60px;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+}
+
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+    margin-right: 5px;
+}
+
+.chat-panel .panel-body {
+    height: 350px;
+    overflow-y: scroll;
+}
