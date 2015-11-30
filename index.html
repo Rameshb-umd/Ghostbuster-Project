@@ -11,6 +11,8 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
 	</head>
 	<body>
 <div class="wrapper">
@@ -60,7 +62,6 @@
           				<span class="icon-bar"></span>
           				<span class="icon-bar"></span>
                       </button>
-                      <a href="index.html" class="navbar-brand logo"></a>
                   	</div>
                   	<nav class="collapse navbar-collapse" role="navigation">
                     <form class="navbar-form navbar-left">
@@ -79,7 +80,7 @@
                         <a href="#postModal" role="button" data-toggle="modal">Chat</a>
                       </li>
                       <li>
-                        <a href="#"><span class="badge">Help</span></a>
+                        <a href="#" id="help"><span class="badge">Help</span></a>
                       <li>
                         <a href="#"><span class="badge">Invert Colors</span></a>
                       </li>
@@ -100,7 +101,7 @@
                     <div class="full">                      
                         <!-- content -->                      
                       	<div class="row">
-                          <div class="col-sm-12">
+                          <div class="col-sm-12 calendar">
                                
                                <div class="panel panel-default">
                                  <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4> Ghostbusters Calendar</h4></div>
@@ -111,8 +112,21 @@
                               </div>
                             
                           </div>
-                            
-                        <div class="hidden">                               
+                            <div class="col-sm-3 hidden helpbar">
+                            <div class="sidebar-nav-fixed helpbar">
+                                <div class="well">
+                                    <div id="Jarvis">
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                    </div>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            </div>
+                        <!--/sidebar-nav-fixed -->  
+                        <div class="col-sm-3 hidden">                               
                         <div class="panel panel-default">                                 
                             <div class="panel-heading">
                             <i class="fa fa-comments fa-fw"></i>
@@ -231,14 +245,99 @@
     </div>
     <div class="navbar-collapse collapse bottom-collapse"> <!-- NOTE! The extra bottom-collapse class put on here -->
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">More</a></li>
-        <li><a href="#about">Bottom</a></li>
-        <li><a href="#contact">Menus</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../navbar/">Default</a></li>
-        <li><a href="../navbar-fixed-top/">Fixed Bottom</a></li>
-      </ul>
+       
+            <div class="row">
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Joey Tribbiani
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">26</div>
+                                    <div>Saturday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin" >
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Phoebe Buffay
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">27</div>
+                                    <div>Sunday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Chandler Bing
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">28</div>
+                                    <div>Monday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Ross Geller
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">30</div>
+                                    <div>wednesday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+      </ul>      
     </div><!--/.nav-collapse -->
   </div>
 </div>
@@ -252,86 +351,10 @@
 	<!-- script references -->
 		<script src="js/jquery-1.7.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scripts.js"></script>
-        <script language="javascript" type="text/javascript" src="js/fullcalendar.min.js"></script>
-        <script>     
-        
-        $(document).ready(function() {
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
-        var calendar = $('#calendar').fullCalendar({
-          height:500,
-          aspectRatio: 1,
-          header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,agendaWeek,agendaDay'
-          },
-          selectable: true,
-          selectHelper: true,
-          select: function(start, end, allDay) {
-            var title = prompt('Event Title:');
-            if (title) {
-              calendar.fullCalendar('renderEvent',
-                {
-                  title: title,
-                  start: start,
-                  end: end,
-                  allDay: allDay
-                },
-                true // make the event "stick"
-              );
-            }
-            calendar.fullCalendar('unselect');
-          },
-          editable: true,
-          events: [
-            {
-              title: 'All Day Event',
-              start: new Date(y, m, 1)
-            },
-            {
-              title: 'Long Event',
-              start: new Date(y, m, d+5),
-              end: new Date(y, m, d+7)
-            },
-            {
-              id: 999,
-              title: 'Repeating Event',
-              start: new Date(y, m, d-3, 16, 0),
-              allDay: false
-            },
-            {
-              id: 999,
-              title: 'Repeating Event',
-              start: new Date(y, m, d+4, 16, 0),
-              allDay: false
-            },
-            {
-              title: 'Meeting',
-              start: new Date(y, m, d, 10, 30),
-              allDay: false
-            },
-            {
-              title: 'Lunch',
-              start: new Date(y, m, d, 12, 0),
-              end: new Date(y, m, d, 14, 0),
-              allDay: false
-            },
-            {
-              title: 'Birthday Party',
-              start: new Date(y, m, d+1, 19, 0),
-              end: new Date(y, m, d+1, 22, 30),
-              allDay: false
-            }
-          ]
-        });
-      });
-    </script><!-- /Calendar -->
-    
-    
-    
+        <script language="javascript" type="text/javascript" src="js/fullcalendar.min.js"></script> 
+        <script language="javascript" type="text/javascript" src="js/speechrecognization.js"></script>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+        <script src="js/scripts.js"></script>
+
 	</body>
 </html>
