@@ -434,7 +434,7 @@ html .fc, .fc table {
 	border: 1px solid #ccc
 }
 .fc-state-highlight {
-	background: #F4F3E6
+	background: #421212
 }
 .fc-cell-overlay {
 	background: #9cf;
@@ -889,6 +889,11 @@ width: 16px;}
 
 /***** Animation****/
 
+#Jarvis {
+  width: 200px; 
+  height: 200px; 
+}
+
 #Jarvis > div { 
   position: absolute; 
   top: 12%; 
@@ -1035,3 +1040,34 @@ width: 16px;}
     }
 }
 /* END Keyframes for the initial animation */
+/*** Typed ****/
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+#Smiley_Message{
+    color: #F4F7F8;
+    font-size: 12px;
+    font-family: 'Arvo', serif;
+}
+#typed{
+    margin-top: 100px;
+}

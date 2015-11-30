@@ -94,26 +94,46 @@ $(document).ready(function() {
         });
       });
 
+var speechs = ["you forgot the magic word", "help activated welcome Janine", "my pleasure","Navigating calendar"];
+var jarvis_speaking =false;
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
  var commands = {
     'I need help': function() { 
-        responsiveVoice.speak("You forgot the magic word.");
+        responsiveVoice.speak(speechs[0],"US English Female",{onstart: StartCallback});
     },
      'Please': function() { 
-        responsiveVoice.speak("Help activated. Welcome Janine.");
+        responsiveVoice.speak(speechs[1],"US English Female", {onstart: StartCallback});
         showhelp();
     },
      'Thank you': function() { 
-        responsiveVoice.speak("My pleasure.");
+        responsiveVoice.speak(speechs[2],"US English Female",{onstart: StartCallback});
         hidehelp();
-    }
-  };
+    },
+     'next month': function() { 
+        $('.fc-button-next').trigger("click");
+        smileymessage_one(speechs[3]);
+    },
+     'previous month': function() { 
+        $('.fc-button-prev').trigger("click");
+        smileymessage_one(speechs[3]);
+    },
+     'go to :month': {'regexp': /^go to (January|Febraury|March|April|May|June|July|August|September|October|November|December)/, 
+                            'callback': gotomonth},
+     'go to :year': {'regexp': /^go to (2015|2016|2010|2011|2012|2013|2014|2017)/, 
+                            'callback': gotoyear}
 
+  };
     annyang.addCallback('resultNoMatch', function (userSaid, commandText, phrases) {
-      console.log(userSaid); // sample output: 'hello'
-      console.log(commandText); // sample output: 'hello (there)'
-      console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+        try{
+            console.log(userSaid[0]); // sample output: 'hello (there)'
+            if(!jarvis_speaking){
+                smileymessage("You Said : "+userSaid[0], "Sorry i dont have any command. <br> For list of commands say 'commands'");
+            }
+            jarvis_speaking = false;
+        }catch(e){
+            console.log(e.message);
+        }
     });
   // Add our commands to annyang
   annyang.addCommands(commands);
@@ -129,6 +149,7 @@ function showhelp(){
     $('.helpbar').removeClass('hidden');
     $('.helpbar').fadeIn( "slow" );
     $('#calendar').fullCalendar('render');
+    smileymessage_one("Hello I am Jarvis, Your Assitant for today. Please say what you need in two words");
 }
 function hidehelp(){
     $('.calendar').removeClass('col-sm-9');
@@ -136,3 +157,47 @@ function hidehelp(){
     $('.helpbar').addClass('hidden');
     $('#calendar').fullCalendar('render');
 }
+ /***************** Message Methods*************************/
+        function smileymessage(content,content2){
+            $("#Smiley_Message").hide(500);
+            var options = {
+              strings: [content, content2],
+              typeSpeed: 0
+            }
+            $("#typed").html('<label id="Smiley_Message"></label>');
+            $("#Smiley_Message").typed(options);            
+        }
+    
+        function smileymessage_one(content){
+            $("#Smiley_Message").hide(500);
+            var options = {
+              strings: [content],
+              typeSpeed: 0
+            }
+            $("#typed").html('<label id="Smiley_Message"></label>');
+            $("#Smiley_Message").typed(options);            
+        }
+        function StartCallback(){
+            jarvis_speaking=true;
+        }
+        
+        function gotomonth(month){
+            smileymessage_one(speechs[3]);
+            var moment=$('#calendar').fullCalendar('getDate');
+            var date = new Date(moment);
+            var monthnumber = getMonthFromString(month);
+            date.setMonth(monthnumber);
+            $('#calendar').fullCalendar( 'gotoDate', date );
+            $(".fc-day"+date.getDate()).addClass('fc-state-highlight');
+        }
+        function getMonthFromString(mon){
+           return new Date(Date.parse(mon +" 1, 2012")).getMonth();
+        }
+        function gotoyear(year){
+            smileymessage_one(speechs[3]);
+            var moment=$('#calendar').fullCalendar('getDate');
+            var date = new Date(moment);
+            date.setFullYear(year)
+            $('#calendar').fullCalendar( 'gotoDate', date );
+            $(".fc-day"+date.getDate()).addClass('fc-state-highlight');
+        }
