@@ -64,17 +64,17 @@
                       </button>
                   	</div>
                   	<nav class="collapse navbar-collapse top-navbar-collapse" role="navigation">
-                    <form class="navbar-form navbar-left">
+                    <div class="navbar-form navbar-left">
                         <div class="input-group input-group-sm" style="max-width:360px;">
                           <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
                           <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                           </div>
                         </div>
-                    </form> 
+                    </div> 
                     <ul class="nav navbar-nav">
                       <li>
-                        <a href="#postModal" role="button" data-toggle="modal">Chat</a>
+                        <a href="#" role="button" id="chat">Chat</a>
                       </li>
                       <li>
                         <a href="#" id="help"><span class="badge">Help</span></a>                     
@@ -121,99 +121,36 @@
                             </div>
                             </div>
                         <!--/sidebar-nav-fixed -->  
-                        <div class="col-sm-3 hidden">                               
+                        <div class="col-sm-3 hidden chat">                               
                         <div class="panel panel-default">                                 
                             <div class="panel-heading">
                             <i class="fa fa-comments fa-fw"></i>
                             Chat
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-chevron-down"></i>
-                                </button>
-                                <ul class="dropdown-menu slidedown">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-refresh fa-fw"></i> Refresh
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-check-circle fa-fw"></i> Available
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-times fa-fw"></i> Busy
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-clock-o fa-fw"></i> Away
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-sign-out fa-fw"></i> Sign Out
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
-                            <div class="panel-body">
+                            <div class="panel-body chat-panel">
                                     
-                            <ul class="chat">
-                                <li class="left clearfix">
+                            <ul class="chat chatmessages">
+                                <li class="left clearfix hidden dummy">
                                     <span class="chat-img pull-left">
                                         <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
-                                            <strong class="primary-font">Jack Sparrow</strong>
+                                            <strong class="primary-font">Venkman</strong>
                                             <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                                                <i class="fa fa-clock-o fa-fw"></i> just now
                                             </small>
                                         </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                        <p class="messagbox">
                                         </p>
                                     </div>
                                 </li>
-                                <li class="right clearfix">
-                                    <span class="chat-img pull-right">
-                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <small class=" text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
-                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">Jack Sparrow</strong>
-                                            <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                                        </p>
-                                    </div>
-                                </li>
+                                
                             </ul>
                                   </div>
                             <div class="panel-footer">
                             <div class="input-group">
-                                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                <input id="chat-btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                                 <span class="input-group-btn">
                                     <button class="btn btn-warning btn-sm" id="btn-chat">
                                         Send
@@ -350,6 +287,7 @@
         <script language="javascript" type="text/javascript" src="js/speechrecognization.js"></script>
         <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
         <script src="js/typed.js"></script>
+        <script src="js/JSONSelect.js"></script>
         <script src="js/scripts.js"></script>
 
 	</body>

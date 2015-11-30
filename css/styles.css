@@ -446,7 +446,7 @@ html .fc, .fc table {
 	display: inline-block;
 	cursor: pointer
 }
-.fc-button-today{margin-top: 8px !important;}
+.fc-button-today{margin-top: 0px !important;}
 .fc-state-default {
 	border-style: solid;
 	border-width: 1px 0
@@ -774,20 +774,22 @@ width: 16px;}
     margin: 0;
     padding: 0;
     list-style: none;
+    font-family: 'Arvo', serif;
+    font-size: 12px;
 }
 
 .chat li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding-bottom: 5px;
     border-bottom: 1px dotted #999;
 }
 
 .chat li.left .chat-body {
-    margin-left: 60px;
+    margin-left: 30px;
 }
 
 .chat li.right .chat-body {
-    margin-right: 60px;
+    margin-right: 30px;
 }
 
 .chat li .chat-body p {
@@ -799,9 +801,10 @@ width: 16px;}
     margin-right: 5px;
 }
 
-.chat-panel .panel-body {
-    height: 350px;
+.chat-panel{
+    max-height: 450px;
     overflow-y: scroll;
+    overflow: scroll;
 }
 /***chat - end ***/
 /**icons**/
