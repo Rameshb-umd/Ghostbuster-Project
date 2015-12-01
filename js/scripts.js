@@ -97,11 +97,11 @@ if (annyang) {
         responsiveVoice.speak(speechs[1],"US English Female", {onstart: StartCallback});
         showhelp();
     },
-     'chat': function() { 
+     'open chat': function() { 
         responsiveVoice.speak(speechs[5],"US English Female", {onstart: StartCallback});
         showchat();
     },
-     'Thank you': function() { 
+     'thank you': function() { 
         responsiveVoice.speak(speechs[2],"US English Female",{onstart: StartCallback});
         hidehelp();
         hidechat();
