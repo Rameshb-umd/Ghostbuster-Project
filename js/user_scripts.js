@@ -9,7 +9,8 @@ $('[data-toggle=offcanvas]').click(function() {
     $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
     $('#btnShow').toggle();
 });
-    
+
+/***********************************/    
 $('#help').click(function(){  
     if($('.helpbar').hasClass('hidden')){
         showhelp();
@@ -17,7 +18,8 @@ $('#help').click(function(){
         hidehelp();
     }                 
 }); 
-    
+
+/***********************************/
 $('.input-group-btn').click(function(){  
     var searcgterm = $('#srch-term').val();
     if(searcgterm !=""&&searcgterm!=undefined){
@@ -25,6 +27,7 @@ $('.input-group-btn').click(function(){
     }
                   
 });  
+/***********************************/
 
     $("#signupID").validate({
 			rules: {
@@ -57,14 +60,43 @@ $('.input-group-btn').click(function(){
 			}
     });
         
-});
+    /***********************************/
 
-$(document).ready(function() {
+    $(".well_schedule").dialog({autoOpen : false,
+      height: 600,
+      width: 900,
+      modal: true,
+      close: function() {
+        $('.ui-dialog').hide();
+      },
+     open: function(event, ui) {
+        $(this).parent().css('position', 'fixed');
+         $('.ui-dialog').show();
+      }
+    });
+    /***********************************/
+    var eventid;    
+    $("#confirmation").dialog({autoOpen : false,
+      buttons : {
+        "Confirm" : function() {
+         $('#calendar-my').fullCalendar('removeEvents',eventid);
+         $(this).dialog("close");
+        },
+        "Cancel" : function() {
+          $(this).dialog("close");
+        }
+      }
+    });
+    /***********************************/
+
+
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
         var y = date.getFullYear();
-        var calendar = $('#calendar').fullCalendar({
+    
+    /***********************************/
+         var calendar = $('#calendar').fullCalendar({
           height:425,
           aspectRatio: 1,
           header: {
@@ -76,35 +108,26 @@ $(document).ready(function() {
           selectHelper: true,
           durationEditable:true,
           select: function(start, end, allDay) {
-                $( ".well_schedule" ).dialog();
-            
-              calendar.fullCalendar('renderEvent',
-                {
-                  title: "title",
-                  start: start,
-                  end: end,
-                  allDay: allDay
-                },
-                true // make the event "stick"
-              );
-            calendar.fullCalendar('unselect');
+              try{
+              var date = new Date(start);
+              var date_end = new Date(end);
+              $('#start_year').val(date.getFullYear());
+              $('#end_year').val(date_end.getFullYear());
+              $('#start_month').val(date.getMonth());
+              $('#end_month').val(date_end.getMonth());
+              $('#start_date').val(date.getDate());
+              $('#end_date').val(date_end.getDate());
+              $('#start_time').val(date.getHours());
+              $('#end_time').val(date_end.getHours());
+              $( ".well_schedule" ).dialog("open");
+              }catch(e){
+                  alert(e.message);
+              }
           },
           editable: true,
           events:jsonfeed
         });
-
-    $(".well_schedule").dialog({autoOpen : false,
-      height: 600,
-      width: 900,
-      modal: true,
-      close: function() {
-        dialog.dialog( "close" );
-      },
-     open: function(event, ui) {
-     $(this).parent().css('position', 'fixed');
-      }
-    });
-
+    /***********************************/
         var calendar_my = $('#calendar-my').fullCalendar({
            height:425,
           aspectRatio: 1,
@@ -117,13 +140,61 @@ $(document).ready(function() {
           selectHelper: true,
           durationEditable:true,
           select: function(start, end, allDay) {
-                $( ".well_schedule" ).dialog("open");
+              try{
+              var date = new Date(start);
+              var date_end = new Date(end);
+              $('#start_year').val(date.getFullYear());
+              $('#end_year').val(date_end.getFullYear());
+              $('#start_month').val(date.getMonth());
+              $('#end_month').val(date_end.getMonth());
+              $('#start_date').val(date.getDate());
+              $('#end_date').val(date_end.getDate());
+              $('#start_time').val(date.getHours());
+              $('#end_time').val(date_end.getHours());
+              $( ".well_schedule" ).dialog("open");
+              }catch(e){
+                  alert(e.message);
+              }
           },
           editable: true,
-          events:jsonfeed_myappointments
+          events:jsonfeed_myappointments,
+          eventRender: function(event, element) {
+          element.append( "<span class='closeon'>[Cancel Appointment]</span>" );
+          element.find(".closeon").click(function() {
+                $("#dialog").dialog("open");
+                eventid=event._id;
+            });
+        }
         });
+    /***********************************/
+    $( "#signupID" ).submit(function(event) {
+        if($(this).valid()){
+            try{
+             $(".well_schedule").dialog("close");
+              var date = new Date();
+              var date_end = new Date();
+              date.setFullYear($('#start_year').val());
+              date_end.setFullYear($('#end_year').val());
+              date.setMonth($('#start_month').val());
+              date_end.setDate($('#end_month').val());
+              date.setDate($('#start_date').val());
+              date_end.setMonth($('#end_date').val());
+              date.setHours($('#start_time').val());
+              date_end.setHours($('#end_time').val());
+              var firstname = $('#firstname').val();
+              $('#calendar').fullCalendar( 'renderEvent', {"title":firstname,"end":date_end,"start":date} );
+              $('#calendar-my').fullCalendar( 'renderEvent', {"title":firstname,"end":date_end,"start":date} );
+              alert("successfully scheduled your appointment");
+            }catch(e){
+                alert(e.message);
+            }
+        }
+        event.preventDefault();
+    });
+    /***********************************/
 
-      });
+    
+});
 
 
 var speechs = ["you forgot the magic word", "help activated welcome user", "my pleasure","Navigating calendar","Expelliarmus","you have zero unread messages"];
@@ -159,6 +230,15 @@ if (annyang) {
         $('.fc-button-prev').trigger("click");
         smileymessage_one(speechs[3]);
     },
+     'week': function(){
+         $('.fc-button-agendaWeek').trigger("click");
+     },
+     'day': function(){
+         $('.fc-button-agendaDay').trigger("click");
+     },
+     'month': function(){
+         $('.fc-button-month').trigger("click");
+     },
      'go to :month': {'regexp': /^go to (January|Febraury|March|April|May|June|July|August|September|October|November|December)/, 
                             'callback': gotomonth},
      'go to :year': {'regexp': /^go to (2015|2016|2010|2011|2012|2013|2014|2017)/, 
@@ -188,11 +268,16 @@ if (annyang) {
      'schedule appointment': function(term){
          window.location.href = "schedule.html";   
      },
-     'logout': function(term){
+     'log out': function(term){
+         responsiveVoice.speak("Have a wonderfull day user.","US English Female",{onstart: StartCallback});
          window.location.href = "index.html";   
+
      },
      'go to home': function(term){
          window.location.href = "user.html";   
+     },
+     'my appointments': function(term){
+         window.location.href = "myappointments.html";   
      },
   };
     annyang.addCallback('resultNoMatch', function (userSaid, commandText, phrases) {

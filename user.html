@@ -1,144 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>GhostBusters Interactive Web Portal - Ramesh Balasekaran</title>
-		<meta name="generator" content="Ramesh balasekaran" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<!--[if lt IE 9]>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>GhostBusters Interactive Web Portal - Ramesh Balasekaran</title>
+    <meta name="generator" content="Ramesh balasekaran" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
-        <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 
-	</head>
-	<body>
-<div class="wrapper">
-    <div class="box">
-        <div class="row row-offcanvas row-offcanvas-left">
-          
-            <!-- sidebar -->
-            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
-               
-              	<ul class="nav">
-          			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-expand"></i></a></li>
-            	</ul>
-               
-                <ul class="nav hidden-xs" id="lg-menu">
-                    <a href="index.html" class="slidebar_logo"></a>
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-home-gh"></i> Home</a></li>
-                    <li><a href="schedule.html"><i class="glyphicon glyphicon-schedule-gh"></i> Schedule an Appointment </a></li>
-                    <li><a href="myappointments.html"><i class="glyphicon glyphicon-myaccount-gh"></i> View My Appointment</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-contact-gh"></i> Contact</a></li>
-                </ul>
-                <ul class="list-unstyled hidden-xs" id="sidebar-footer">
-                    <li>
-                      <a href="http://www.rameshbalasekaran.com"> <h6>Copyright <br> Ramesh Balasekaran</h6> </a>
-                    </li>
-                </ul>
-              
-              	<!-- tiny only nav-->
-              <ul class="nav visible-xs" id="xs-menu">
-                  	<li class="active"><a href="#" class="text-center"><i class="glyphicon glyphicon-home-gh"></i></a></li>
-                    <li><a href="schedule.html" class="text-center"><i class="glyphicon glyphicon-schedule-gh"></i></a></li>
-                  	<li><a href="myappointments.html" class="text-center"><i class="glyphicon glyphicon-myaccount-gh"></i></a></li>
-                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-contact-gh"></i></a></li>
-                </ul>
-              
-            </div>
-            <!-- /sidebar -->
-          
-            <!-- main right col -->
-            <div class="column col-sm-10 col-xs-11" id="main">
-                
-                <!-- top nav -->
-              	<div class="navbar navbar-blue navbar-static-top">  
-                    <div class="navbar-header">
-                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".top-navbar-collapse">
-                        <span class="sr-only">Toggle</span>
-                        <span class="icon-bar"></span>
-          				<span class="icon-bar"></span>
-          				<span class="icon-bar"></span>
-                      </button>
-                  	</div>
-                  	<nav class="collapse navbar-collapse top-navbar-collapse" role="navigation">
-                    <div class="navbar-form navbar-left">
-                        <div class="input-group input-group-sm" style="max-width:360px;">
-                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                          <div class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                          </div>
-                        </div>
-                    </div> 
-                    <ul class="nav navbar-nav">
-                      <li>
-                        <a href="#" id="help"><span class="badge">Help</span></a>                     
-                      </li>
-                        
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="row row-offcanvas row-offcanvas-left">
+
+                <!-- sidebar -->
+                <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+
+                    <ul class="nav">
+                        <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-expand"></i></a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="index.html">Logout</a></li>
-                        </ul>
-                      </li>
+
+                    <ul class="nav hidden-xs" id="lg-menu">
+                        <a href="index.html" class="slidebar_logo"></a>
+                        <li class="active"><a href="user.html"><i class="glyphicon glyphicon-home-gh"></i> Home</a></li>
+                        <li><a href="schedule.html"><i class="glyphicon glyphicon-schedule-gh"></i> Schedule an Appointment </a></li>
+                        <li><a href="myappointments.html"><i class="glyphicon glyphicon-myaccount-gh"></i> View My Appointment</a></li>
                     </ul>
-                  	</nav>
+                    <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+                        <li>
+                            <a href="http://www.rameshbalasekaran.com">
+                                <h6>Copyright <br> Ramesh Balasekaran</h6> </a>
+                        </li>
+                    </ul>
+
+                    <!-- tiny only nav-->
+                    <ul class="nav visible-xs" id="xs-menu">
+                        <li class="active"><a href="user.html" class="text-center"><i class="glyphicon glyphicon-home-gh"></i></a></li>
+                        <li><a href="schedule.html" class="text-center"><i class="glyphicon glyphicon-schedule-gh"></i></a></li>
+                        <li><a href="myappointments.html" class="text-center"><i class="glyphicon glyphicon-myaccount-gh"></i></a></li>
+                    </ul>
+
                 </div>
-                <!-- /top nav -->
-              
-                    <div class="full">                      
-                        <!-- content -->                      
-                      	<div class="row">
-                          <div class="col-sm-12 calendar">
-                               
-                               <div class="panel panel-default">
-                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4> Ghostbusters Calendar</h4></div>
-                                  <div class="panel-body">
-                                    <div id='calendar'>
+                <!-- /sidebar -->
+
+                <!-- main right col -->
+                <div class="column col-sm-10 col-xs-11" id="main">
+
+                    <!-- top nav -->
+                    <div class="navbar navbar-blue navbar-static-top">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".top-navbar-collapse">
+                                <span class="sr-only">Toggle</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <nav class="collapse navbar-collapse top-navbar-collapse" role="navigation">
+                            <div class="navbar-form navbar-left">
+                                <div class="input-group input-group-sm" style="max-width:360px;">
+                                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                                     </div>
-                                  </div>
-                              </div>
-                            
-                          </div>
-                            <div class="col-sm-3 hidden helpbar">
-                            <div class="sidebar-nav-fixed helpbar">
-                                <div class="well">
-                                    <div id="Jarvis">
-                                        <div><div></div></div>
-                                        <div><div></div></div>
-                                        <div><div></div></div>
-                                        <div><div></div></div>
-                                    </div>
-                                    <div id="typed"><label id="Smiley_Message"></label></div>
                                 </div>
-                                <!--/.well -->
                             </div>
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#" id="help"><span class="badge">Help</span></a>
+                                </li>
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index.html">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- /top nav -->
+
+                    <div class="full">
+                        <!-- content -->
+                        <div class="row">
+                            <div class="col-sm-12 calendar">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4> Ghostbusters availablity</h4></div>
+                                    <div class="panel-body">
+                                        <div id='calendar'>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                        <!--/sidebar-nav-fixed --> 
-                       </div><!--/row-->                      
-                    </div><!-- /col-9 -->  
+                            <div class="col-sm-3 hidden helpbar">
+                                <div class="sidebar-nav-fixed helpbar">
+                                    <div class="well">
+                                        <div id="Jarvis">
+                                            <div>
+                                                <div></div>
+                                            </div>
+                                            <div>
+                                                <div></div>
+                                            </div>
+                                            <div>
+                                                <div></div>
+                                            </div>
+                                            <div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                        <div id="typed">
+                                            <label id="Smiley_Message"></label>
+                                        </div>
+                                    </div>
+                                    <!--/.well -->
+                                </div>
+                            </div>
+                            <!--/sidebar-nav-fixed -->
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!-- /col-9 -->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
+    <div class="hidden">
+        <div class="full well_schedule">
+            <!-- content -->
+            <div class="row">
+                <div class="col-sm-12 calendar">
+                    <form action="#" method="post" id="signupID">
 
-	<!-- script references -->
-		<script src="js/jquery-1.7.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-        <script language="javascript" type="text/javascript" src="js/fullcalendar.min.js"></script> 
-        <script language="javascript" type="text/javascript" src="js/speechrecognization.js"></script>
-        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-        <script src="js/typed.js"></script>
-        <script src="js/JSONSelect.js"></script>
-        <script src="js/user_scripts.js"></script>
-        <script src="js/jquery.validate.js"></script>
+                        <h3> Make an Appointment</h3>
+
+                        <fieldset>
+                            <label for="firstname">First Name:</label>
+                            <input type="text" id="firstname" name="firstname" value="">
+
+                            <label for="lastname">Last Name:</label>
+                            <input type="text" id="lastname" name="lastname" value="">
+
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" name="phone" value="">
+
+                            <label for="mail">Email:</label>
+                            <input type="email" id="mail" name="mail" value="">
+
+                            <div class="btn-toolbar" style="margin: 0;">
+                                <div class="btn-group">
+                                    <label for="starttime" class="">Start Time</label>
+                                    <input type="text" id="start_year" name="year" value="" style="width:100px;height:30px;" placeholder="year">
+                                    <select class="" style="width:auto" id="start_month">
+                                        <option value="Month" class="">- Month -</option>
+                                        <option value="0" class="">January</option>
+                                        <option value="1" class="">February</option>
+                                        <option value="2" class="">March</option>
+                                        <option value="3" class="">April</option>
+                                        <option value="4" class="">May</option>
+                                        <option value="5" class="">June</option>
+                                        <option value="6" class="">July</option>
+                                        <option value="7" class="">August</option>
+                                        <option value="8" class="">September</option>
+                                        <option value="9" class="">October</option>
+                                        <option value="10" class="">November</option>
+                                        <option value="11" class="">December</option>
+                                    </select>
+                                    <select class="" style="width:auto" id="start_date">
+                                        <option value="Day" class="">- Day -</option>
+                                        <option value="1" class="">1</option>
+                                        <option value="2" class="">2</option>
+                                        <option value="3" class="">3</option>
+                                        <option value="4" class="">4</option>
+                                        <option value="5" class="">5</option>
+                                        <option value="6" class="">6</option>
+                                        <option value="7" class="">7</option>
+                                        <option value="8" class="">8</option>
+                                        <option value="9" class="">9</option>
+                                        <option value="10" class="">10</option>
+                                        <option value="11" class="">11</option>
+                                        <option value="12" class="">12</option>
+                                        <option value="13" class="">13</option>
+                                        <option value="14" class="">14</option>
+                                        <option value="15" class="">15</option>
+                                        <option value="16" class="">16</option>
+                                        <option value="17" class="">17</option>
+                                        <option value="18" class="">18</option>
+                                        <option value="19" class="">19</option>
+                                        <option value="20" class="">20</option>
+                                        <option value="21" class="">21</option>
+                                        <option value="22" class="">22</option>
+                                        <option value="23" class="">23</option>
+                                        <option value="24" class="">24</option>
+                                        <option value="25" class="">25</option>
+                                        <option value="26" class="">26</option>
+                                        <option value="27" class="">27</option>
+                                        <option value="28" class="">28</option>
+                                        <option value="29" class="">29</option>
+                                        <option value="30" class="">30</option>
+                                        <option value="31" class="">31</option>
+                                    </select>
+                                    <select class="" style="width:auto" id="start_time">
+                                        <option value="Time" class="">Time am/pm</option>
+                                        <option value="6" class="">6am</option>
+                                        <option value="7" class="">7am</option>
+                                        <option value="8" class="">8am</option>
+                                        <option value="9" class="">9am</option>
+                                        <option value="10" class="">10am</option>
+                                        <option value="11" class="">11am</option>
+                                        <option value="12" class="">12pm</option>
+                                        <option value="13" class="">1:pm</option>
+                                        <option value="14" class="">2:00pm</option>
+                                        <option value="15" class="">3:00pm</option>
+                                        <option value="16" class="">4:00pm</option>
+                                        <option value="17" class="">5:00pm</option>
+                                        <option value="18" class="">6:00pm</option>
+                                        <option value="19" class="">7:00pm</option>
+                                        <option value="20" class="">8:00pm</option>
+                                        <option value="21" class="">9:00pm</option>
+                                        <option value="22" class="">10:00pm</option>
+                                        <option value="23" class="">11:00pm</option>
+                                    </select>
+                                    <label class="">End Time</label>
+                                    <input type="text" id="end_year" name="year" value="" style="width:100px;height:30px;" placeholder="year">
+                                    <select class="" style="width:auto" id="end_month">
+                                        <option value="Month" class="">- Month -</option>
+                                        <option value="0" class="">January</option>
+                                        <option value="1" class="">February</option>
+                                        <option value="2" class="">March</option>
+                                        <option value="3" class="">April</option>
+                                        <option value="4" class="">May</option>
+                                        <option value="5" class="">June</option>
+                                        <option value="6" class="">July</option>
+                                        <option value="7" class="">August</option>
+                                        <option value="8" class="">September</option>
+                                        <option value="9" class="">October</option>
+                                        <option value="10" class="">November</option>
+                                        <option value="11" class="">December</option>
+                                    </select>
+                                    <select class="" style="width:auto" id="end_date">
+                                        <option value="Day" class="">- Day -</option>
+                                        <option value="1" class="">1</option>
+                                        <option value="2" class="">2</option>
+                                        <option value="3" class="">3</option>
+                                        <option value="4" class="">4</option>
+                                        <option value="5" class="">5</option>
+                                        <option value="6" class="">6</option>
+                                        <option value="7" class="">7</option>
+                                        <option value="8" class="">8</option>
+                                        <option value="9" class="">9</option>
+                                        <option value="10" class="">10</option>
+                                        <option value="11" class="">11</option>
+                                        <option value="12" class="">12</option>
+                                        <option value="13" class="">13</option>
+                                        <option value="14" class="">14</option>
+                                        <option value="15" class="">15</option>
+                                        <option value="16" class="">16</option>
+                                        <option value="17" class="">17</option>
+                                        <option value="18" class="">18</option>
+                                        <option value="19" class="">19</option>
+                                        <option value="20" class="">20</option>
+                                        <option value="21" class="">21</option>
+                                        <option value="22" class="">22</option>
+                                        <option value="23" class="">23</option>
+                                        <option value="24" class="">24</option>
+                                        <option value="25" class="">25</option>
+                                        <option value="26" class="">26</option>
+                                        <option value="27" class="">27</option>
+                                        <option value="28" class="">28</option>
+                                        <option value="29" class="">29</option>
+                                        <option value="30" class="">30</option>
+                                        <option value="31" class="">31</option>
+                                    </select>
+                                    <select class="" style="width:auto" id="end_time">
+                                        <option value="Time" class="">Time am/pm</option>
+                                        <option value="6" class="">6am</option>
+                                        <option value="7" class="">7am</option>
+                                        <option value="8" class="">8am</option>
+                                        <option value="9" class="">9am</option>
+                                        <option value="10" class="">10am</option>
+                                        <option value="11" class="">11am</option>
+                                        <option value="12" class="">12pm</option>
+                                        <option value="13" class="">1:pm</option>
+                                        <option value="14" class="">2:00pm</option>
+                                        <option value="15" class="">3:00pm</option>
+                                        <option value="16" class="">4:00pm</option>
+                                        <option value="17" class="">5:00pm</option>
+                                        <option value="18" class="">6:00pm</option>
+                                        <option value="19" class="">7:00pm</option>
+                                        <option value="20" class="">8:00pm</option>
+                                        <option value="21" class="">9:00pm</option>
+                                        <option value="22" class="">10:00pm</option>
+                                        <option value="23" class="">11:00pm</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label for="message" class="">Message</label>
+                            <textarea name="message" id="message" class="span4" rows="10" style="width: 96%"></textarea>
+                            <button type="submit" class="btn btn-warning" contenteditable="false" id="submit">Submit</button>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <!-- /col-9 -->
+        </div>
+    </div>
+    <div class="hidden" style="display:none;">
+        <div id="dialog">
+            Are you sure about this?
+        </div>
+    </div>
+    <!-- script references -->
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fullcalendar.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/speechrecognization.js"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script src="js/typed.js"></script>
+    <script src="js/JSONSelect.js"></script>
+    <script src="js/user_scripts.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 
-	</body>
+</body>
+
 </html>
