@@ -59,9 +59,9 @@ body{ background: none; color:#838383; font: 13px/1.7em 'Open Sans';}
 	box-shadow: inset 2px 2px 4px #f1f1f1;
 }
 
-.username-field { background: url(../img/signin/user.png) no-repeat; }
+.username-field { background: url(../img/signin/user.png) no-repeat !important; }
 
-.password-field { background: url(../img/signin/password.png) no-repeat; }
+.password-field { background: url(../img/signin/password.png) no-repeat !important ; }
 
 
 

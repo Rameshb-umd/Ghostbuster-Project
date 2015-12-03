@@ -379,7 +379,6 @@ function hidehelp(){
         function searchevents(title){
             
             var selector = ':has(.title:val("'+title+'"))'; // xPath CSS like selector
-            alert(selector);
             try {
                 var resultObj = JSONSelect.match(selector, jsonfeed);
                 console.log(resultObj);

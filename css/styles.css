@@ -383,7 +383,7 @@ small.text-muted {
     direction: ltr;
     text-align: left;
     position: relative;
-    font-family: 'Arvo', serif;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 .fc table {
@@ -547,7 +547,7 @@ html .fc,
 }
 
 .fc-state-highlight {
-    background: #29526B;
+    background: #B7C5CE;
     color: white;
 }
 
@@ -1150,6 +1150,7 @@ table.fc-border-separate {
     top: 12%;
     left: 50%;
     margin-left: -103px;
+    margin-top: -100px;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -1356,13 +1357,10 @@ table.fc-border-separate {
 .commands {
     color: #F4F7F8;
     font-size: 12px;
-    font-family: 'Lato', serif;
-    font-style: italic;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-#typed {
-    margin-top: 100px;
-}
+
 
 #sidebar a {
     cursor: pointer;
@@ -1483,6 +1481,10 @@ label.light {
 .closeon {
     width: 5px;
     height: 5px;
+    color: #29526B;
+    font-weight: bold;
+    cursor: pointer;
+
 }
 
 *, *:after, *:before {
@@ -1510,17 +1512,18 @@ label.light {
   min-width: 280px;
   max-width: 500px;
   height: auto;
-  background: #E2E2E2;
+  background: #29526B;
   border-radius: 10px;
   padding: 0;
   margin: 0;
   border-top: 1px solid white;
   animation: fade 1s ease 1 forwards;
+  color: white;
     z-index: 1000000000 !important;
 }
 .confirm h1 {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 14px;
   margin: 1.5rem 1rem 0.5rem;
 }
 .confirm p {
@@ -1529,15 +1532,15 @@ label.light {
   margin: 0 2rem 4.5rem;
 }
 .confirm button {
-  background: transparent;
+  background: white;
   border: none;
-  color: #1678E5;
-  height: 3rem;
-  font-size: 1rem;
+  color: #29526B;
+  font-size: 14px;
   width: 50%;
   position: absolute;
   bottom: 0;
   cursor: pointer;
+    height: 50px;
 }
 .confirm button:nth-of-type(1) {
   border-top: 1px solid #B4B4B4;
