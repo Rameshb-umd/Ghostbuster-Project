@@ -81,6 +81,15 @@ hr {
     width:inherit;
 }
 
+.navbar-green{
+    border-width:0;
+	background-color:#5CB85C;
+    color:#ffffff;
+    font-family:arial,sans-serif;
+    top:0;
+    width:inherit;
+}
+
 .navbar-blue li > a,.navbar-toggle  {
    color:#efefef;
 }
@@ -136,6 +145,24 @@ hr {
   text-shadow:0 0 1px;
   border-radius:2px; 
   cursor: pointer;
+}
+
+.slidebar_logo_small{    
+  display:block;
+  padding:3px;
+  background-color:#fff;
+  background: url('../img/logo-small.png') no-repeat !important;
+  color:whitesmoke;
+  height:50px;
+  width:50px;
+  margin:9px;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:0 0 1px;
+  border-radius:2px; 
+  cursor: pointer;
+  font-size: 25px;
+  vertical-align: middle;
 }
 
 .logo {
