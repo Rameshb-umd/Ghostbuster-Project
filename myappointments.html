@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>GhostBusters Interactive Web Portal - Ramesh Balasekaran</title>
+		<meta name="generator" content="Ramesh balasekaran" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+          
+            <!-- sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+               
+              	<ul class="nav">
+          			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-expand"></i></a></li>
+            	</ul>
+               
+                <ul class="nav hidden-xs" id="lg-menu">
+                    <a href="index.html" class="slidebar_logo"></a>
+                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-home-gh"></i> Home</a></li>
+                    <li><a href="schedule.html"><i class="glyphicon glyphicon-schedule-gh"></i> Schedule an Appointment </a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-myaccount-gh"></i> View My Appointment</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-contact-gh"></i> Contact</a></li>
+                </ul>
+                <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="http://www.rameshbalasekaran.com"> <h6>Copyright <br> Ramesh Balasekaran</h6> </a>
+                    </li>
+                </ul>
+              
+              	<!-- tiny only nav-->
+              <ul class="nav visible-xs" id="xs-menu">
+                  	<li class="active"><a href="#" class="text-center"><i class="glyphicon glyphicon-home-gh"></i></a></li>
+                    <li><a href="schedule.html" class="text-center"><i class="glyphicon glyphicon-schedule-gh"></i></a></li>
+                  	<li><a href="#" class="text-center"><i class="glyphicon glyphicon-myaccount-gh"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-contact-gh"></i></a></li>
+                </ul>
+              
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+                
+                <!-- top nav -->
+              	<div class="navbar navbar-blue navbar-static-top">  
+                    <div class="navbar-header">
+                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".top-navbar-collapse">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+                      </button>
+                  	</div>
+                  	<nav class="collapse navbar-collapse top-navbar-collapse" role="navigation">
+                    <div class="navbar-form navbar-left">
+                        <div class="input-group input-group-sm" style="max-width:360px;">
+                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                          </div>
+                        </div>
+                    </div> 
+                    <ul class="nav navbar-nav">
+                      <li>
+                        <a href="#" id="help"><span class="badge">Help</span></a>                     
+                      </li>
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="index.html">Logout</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  	</nav>
+                </div>
+                <!-- /top nav -->
+              
+                    <div class="full">                      
+                        <!-- content -->                      
+                      	<div class="row">
+                          <div class="col-sm-12 calendar">
+                               
+                               <div class="panel panel-default">
+                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4> Ghostbusters Calendar</h4></div>
+                                  <div class="panel-body">
+                                    <div id='calendar-my'>
+                                    </div>
+                                  </div>
+                              </div>
+                            
+                          </div>
+                            <div class="col-sm-3 hidden helpbar">
+                            <div class="sidebar-nav-fixed helpbar">
+                                <div class="well">
+                                    <div id="Jarvis">
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                    </div>
+                                    <div id="typed"><label id="Smiley_Message"></label></div>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            </div>
+                        <!--/sidebar-nav-fixed --> 
+                       </div><!--/row-->                      
+                    </div><!-- /col-9 -->  
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="hidden">
+<div class="full well_schedule">                      
+                        <!-- content -->                      
+<div class="row">
+    <div class="col-sm-12 calendar">
+             <form action="#" method="post" id="signupID">
+      
+                <h3> Make an Appointment</h3>
+        
+                <fieldset>
+                  <label for="firstname">First Name:</label>
+                  <input type="text" id="firstname" name="firstname" value="">
+                    
+                  <label for="lastname">Last Name:</label>
+                  <input type="text" id="lastname" name="lastname" value="">
+                    
+                  <label for="phone">Phone:</label>
+                  <input type="text" id="phone" name="phone" value="">
+
+                  <label for="mail">Email:</label>
+                  <input type="email" id="mail" name="mail" value="">
+
+                  <div class="btn-toolbar" style="margin: 0;">
+                    <div class="btn-group">
+                        <label for="starttime" class="">Start Time</label>
+                        <select class="" style="width:auto" id="month">
+                            <option value="Month" class="">- Month -</option>
+                            <option value="January" class="">January</option>
+                            <option value="February" class="">February</option>
+                            <option value="March" class="">March</option>
+                            <option value="April" class="">April</option>
+                            <option value="May" class="">May</option>
+                            <option value="June" class="">June</option>
+                            <option value="July" class="">July</option>
+                            <option value="August" class="">August</option>
+                            <option value="September" class="">September</option>
+                            <option value="October" class="">October</option>
+                            <option value="November" class="">November</option>
+                            <option value="December" class="">December</option>
+                        </select>
+                        <select class="" style="width:auto" starttime>
+                            <option value="Day" class="">- Day -</option>
+                            <option value="01" class="">1</option>
+                            <option value="02" class="">2</option>
+                            <option value="03" class="">3</option>
+                            <option value="03" class="">4</option>
+                            <option value="03" class="">5</option>
+                            <option value="03" class="">6</option>
+                            <option value="03" class="">7</option>
+                            <option value="03" class="">8</option>
+                            <option value="03" class="">9</option>
+                            <option value="03" class="">10</option>
+                            <option value="03" class="">11</option>
+                            <option value="03" class="">12</option>
+                            <option value="03" class="">13</option>
+                            <option value="03" class="">14</option>
+                            <option value="03" class="">15</option>
+                            <option value="03" class="">16</option>
+                            <option value="03" class="">17</option>
+                            <option value="03" class="">18</option>
+                            <option value="03" class="">19</option>
+                            <option value="03" class="">20</option>
+                            <option value="03" class="">21</option>
+                            <option value="03" class="">22</option>
+                            <option value="03" class="">23</option>
+                            <option value="03" class="">24</option>
+                            <option value="03" class="">25</option>
+                            <option value="03" class="">26</option>
+                            <option value="03" class="">27</option>
+                            <option value="03" class="">28</option>
+                            <option value="03" class="">29</option>
+                            <option value="03" class="">30</option>
+                            <option value="03" class="">31</option>
+                        </select>
+                        <select class="" style="width:auto">
+                            <option value="Time" class="">Time am/pm</option>
+                            <option value="10am" class="">10:00am</option>
+                            <option value="1030am" class="">10:30am</option>
+                            <option value="11am" class="">11:00am</option>
+                            <option value="1130am" class="">11:30am</option>
+                            <option value="12pm" class="">12:00pm</option>
+                            <option value="1230pm" class="">12:30pm</option>
+                            <option value="1pm" class="">1:00pm</option>
+                            <option value="130pm" class="">1:30pm</option>
+                            <option value="2pm" class="">2:00pm</option>
+                            <option value="230pm" class="">2:30pm</option>
+                            <option value="3pm" class="">3:00pm</option>
+                            <option value="330pm" class="">3:30pm</option>
+                            <option value="4pm" class="">4:00pm</option>
+                            <option value="430pm" class="">4:30pm</option>
+                        </select>
+                        <label class="">End Time</label>
+                        <select class="" style="width:auto">
+                            <option value="Month" class="">- Month -</option>
+                            <option value="January" class="">January</option>
+                            <option value="February" class="">February</option>
+                            <option value="March" class="">March</option>
+                            <option value="April" class="">April</option>
+                            <option value="May" class="">May</option>
+                            <option value="June" class="">June</option>
+                            <option value="July" class="">July</option>
+                            <option value="August" class="">August</option>
+                            <option value="September" class="">September</option>
+                            <option value="October" class="">October</option>
+                            <option value="November" class="">November</option>
+                            <option value="December" class="">December</option>
+                        </select>
+                        <select class="" style="width:auto">
+                            <option value="Day" class="">- Day -</option>
+                            <option value="01" class="">1</option>
+                            <option value="02" class="">2</option>
+                            <option value="03" class="">3</option>
+                            <option value="03" class="">4</option>
+                            <option value="03" class="">5</option>
+                            <option value="03" class="">6</option>
+                            <option value="03" class="">7</option>
+                            <option value="03" class="">8</option>
+                            <option value="03" class="">9</option>
+                            <option value="03" class="">10</option>
+                            <option value="03" class="">11</option>
+                            <option value="03" class="">12</option>
+                            <option value="03" class="">13</option>
+                            <option value="03" class="">14</option>
+                            <option value="03" class="">15</option>
+                            <option value="03" class="">16</option>
+                            <option value="03" class="">17</option>
+                            <option value="03" class="">18</option>
+                            <option value="03" class="">19</option>
+                            <option value="03" class="">20</option>
+                            <option value="03" class="">21</option>
+                            <option value="03" class="">22</option>
+                            <option value="03" class="">23</option>
+                            <option value="03" class="">24</option>
+                            <option value="03" class="">25</option>
+                            <option value="03" class="">26</option>
+                            <option value="03" class="">27</option>
+                            <option value="03" class="">28</option>
+                            <option value="03" class="">29</option>
+                            <option value="03" class="">30</option>
+                            <option value="03" class="">31</option>
+                        </select>
+                        <select class="" style="width:auto">
+                            <option value="Time" class="">Time am/pm</option>
+                            <option value="10am" class="">10:00am</option>
+                            <option value="1030am" class="">10:30am</option>
+                            <option value="11am" class="">11:00am</option>
+                            <option value="1130am" class="">11:30am</option>
+                            <option value="12pm" class="">12:00pm</option>
+                            <option value="1230pm" class="">12:30pm</option>
+                            <option value="1pm" class="">1:00pm</option>
+                            <option value="130pm" class="">1:30pm</option>
+                            <option value="2pm" class="">2:00pm</option>
+                            <option value="230pm" class="">2:30pm</option>
+                            <option value="3pm" class="">3:00pm</option>
+                            <option value="330pm" class="">3:30pm</option>
+                            <option value="4pm" class="">4:00pm</option>
+                            <option value="430pm" class="">4:30pm</option>
+                        </select>
+                      </div>
+                    </div>
+                     <label for="message" class="">Message</label>
+                    <textarea name="message" id="message" class="span4" rows="10" style="width: 96%"></textarea>
+                    <button type="submit" class="btn btn-warning" contenteditable="false" id="submit">Submit</button>
+
+                </fieldset>               
+                 </form>
+        </div>
+        <div class="col-sm-3 hidden helpbar">
+                            <div class="sidebar-nav-fixed helpbar">
+                                <div class="well">
+                                    <div id="Jarvis">
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                    </div>
+                                    <div id="typed"><label id="Smiley_Message"></label></div>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            </div>
+                        <!--/sidebar-nav-fixed --> 
+                       </div><!--/row-->                      
+                    </div><!-- /col-9 -->  </div>
+
+
+	<!-- script references -->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+        <script src="js/moment.min.js"></script>        
+        <script language="javascript" type="text/javascript" src="js/fullcalendar.min.js"></script> 
+        <script language="javascript" type="text/javascript" src="js/speechrecognization.js"></script>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+        <script src="js/typed.js"></script>
+        <script src="js/JSONSelect.js"></script>
+        <script src="js/user_scripts.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+
+
+	</body>
+</html>
