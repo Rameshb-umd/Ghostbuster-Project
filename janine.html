@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>GhostBusters Interactive Web Portal - Ramesh Balasekaran</title>
+		<meta name="generator" content="Ramesh balasekaran" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+          
+            <!-- sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+               
+              	<ul class="nav">
+          			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-expand"></i></a></li>
+            	</ul>
+               
+                <ul class="nav hidden-xs" id="lg-menu">
+                    <a href="index.html" class="slidebar_logo"></a>
+                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-home-gh"></i> Home</a></li>
+                    <li><a href="#stories"><i class="glyphicon glyphicon-schedule-gh"></i> Schedule an Appointment </a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-myaccount-gh"></i> View My Appointment</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-contact-gh"></i> Contact</a></li>
+                </ul>
+                <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="http://www.rameshbalasekaran.com"> <h6>Copyright <br> Ramesh Balasekaran</h6> </a>
+                    </li>
+                </ul>
+              
+              	<!-- tiny only nav-->
+              <ul class="nav visible-xs" id="xs-menu">
+                  	<li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-home-gh"></i></a></li>
+                    <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-schedule-gh"></i></a></li>
+                  	<li><a href="#" class="text-center"><i class="glyphicon glyphicon-myaccount-gh"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-contact-gh"></i></a></li>
+                </ul>
+              
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+                
+                <!-- top nav -->
+              	<div class="navbar navbar-blue navbar-static-top">  
+                    <div class="navbar-header">
+                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".top-navbar-collapse">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+                      </button>
+                  	</div>
+                  	<nav class="collapse navbar-collapse top-navbar-collapse" role="navigation">
+                    <div class="navbar-form navbar-left">
+                        <div class="input-group input-group-sm" style="max-width:360px;">
+                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                          </div>
+                        </div>
+                    </div> 
+                    <ul class="nav navbar-nav">
+                      <li>
+                        <a href="#" role="button" id="chat">Chat</a>
+                      </li>
+                      <li>
+                        <a href="#" id="help"><span class="badge">Help</span></a>                     
+                      </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="">Logout</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  	</nav>
+                </div>
+                <!-- /top nav -->
+              
+                    <div class="full">                      
+                        <!-- content -->                      
+                      	<div class="row">
+                          <div class="col-sm-12 calendar">
+                               
+                               <div class="panel panel-default">
+                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4> Ghostbusters Calendar</h4></div>
+                                  <div class="panel-body">
+                                    <div id='calendar'>
+                                    </div>
+                                  </div>
+                              </div>
+                            
+                          </div>
+                            <div class="col-sm-3 hidden helpbar">
+                            <div class="sidebar-nav-fixed helpbar">
+                                <div class="well">
+                                    <div id="Jarvis">
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                    </div>
+                                    <div id="typed"><label id="Smiley_Message"></label></div>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            </div>
+                        <!--/sidebar-nav-fixed -->  
+                        <div class="col-sm-3 hidden chat">                               
+                        <div class="panel panel-default">                                 
+                            <div class="panel-heading">
+                            <i class="fa fa-comments fa-fw"></i>
+                            Chat
+                        </div>
+                            <div class="panel-body chat-panel">
+                                    
+                            <ul class="chat chatmessages">
+                                <li class="left clearfix hidden dummy">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">Venkman</strong>
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i> just now
+                                            </small>
+                                        </div>
+                                        <p class="messagbox">
+                                        </p>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                                  </div>
+                            <div class="panel-footer">
+                            <div class="input-group">
+                                <input id="chat-btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning btn-sm" id="btn-chat">
+                                        Send
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                            
+                          </div>
+                       </div><!--/row-->                      
+                    </div><!-- /col-9 -->  
+            </div>
+            <!-- /main -->
+          <!-- Static bottom navbar -->
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bottom-collapse"> <!-- NOTE! data-target was changed to .bottom-collapse -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse bottom-collapse"> <!-- NOTE! The extra bottom-collapse class put on here -->
+      <ul class="nav navbar-nav">
+       
+            <div class="row">
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Joey Tribbiani
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">26</div>
+                                    <div>Saturday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin" >
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Phoebe Buffay
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">27</div>
+                                    <div>Sunday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Chandler Bing
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">28</div>
+                                    <div>Monday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hidden-sm">
+                    <div class="panel panel-primary panel-nomargin">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    Ross Geller
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">30</div>
+                                    <div>wednesday</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+      </ul>      
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+ 
+        </div>
+    </div>
+</div>
+
+
+
+	<!-- script references -->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/fullcalendar.min.js"></script> 
+        <script language="javascript" type="text/javascript" src="js/speechrecognization.js"></script>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+        <script src="js/typed.js"></script>
+        <script src="js/JSONSelect.js"></script>
+        <script src="js/scripts.js"></script>
+
+	</body>
+</html>

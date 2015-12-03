@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<meta charset="utf-8">
+<title>Login - Bootstrap Admin Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+    
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">    
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href="css/signin.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+	
+<div class="navbar navbar-green navbar-static-top">  	
+	<div class="navbar-inner">
+		<div class="container">
+            <a href="login.html" class="slidebar_logo_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GHOSTBUSTERS</a>
+		</div> <!-- /container -->		
+	</div> <!-- /navbar-inner -->	
+</div> <!-- /navbar -->
+
+
+
+	
+	<div class="main-content">
+    	<div class="container">
+    		<div class="row">
+            
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+    				
+				    <div class="left sidebar">
+				    	
+			    		<div class="opening-time sidebar-item visible-desktop">
+		                    <div class="time-table">
+		                        <h3><span class="icon icons-ornament-left"></span> <span class="light">OPENING</span> TIME <span class="icon icons-ornament-right"></span></h3>
+		                        <div class="inner-bg">
+		                            <dl class="week-day">
+		                                <dt>Monday</dt>
+		                                <dd>Appointment</dd>
+		                            </dl>
+		                            <dl class="week-day light-bg">
+		                                <dt>Tuesday</dt>
+		                                <dd>9:30am-7pm</dd>
+		                            </dl>
+		                            <dl class="week-day today">
+		                                <dt>Wednesday</dt>
+		                                <dd>9:30am-7pm</dd>
+		                            </dl>
+		                            <dl class="week-day light-bg">
+		                                <dt>Thursday</dt>
+		                                <dd>9:30am-7pm</dd>
+		                            </dl>
+		                            <dl class="week-day">
+		                                <dt>Friday</dt>
+		                                <dd>9:30am-7pm</dd>
+		                            </dl>
+		                            <dl class="week-day light-bg">
+		                                <dt>Saturday</dt>
+		                                <dd>9:30am-7pm</dd>
+		                            </dl>
+		                            <dl class="week-day closed">
+		                                <dt>Sunday</dt>
+		                                <dd>Appointment</dd>
+		                            </dl>
+		                        </div>
+		                    </div>
+				    	</div><!-- /opening time -->
+		                
+		                <div class="sidebar-item">
+		                	<div class="lined">
+		                		<h2><span class="light">OUR</span> ADDRESS</h2>
+		                		<h5>Where can you find us?</h5>
+		                		<span class="bolded-line"></span>
+		                	</div>
+		                	<strong>144 Hair Salon</strong> <br>
+5022 HWY 90A <br>
+SUGAR LAND, TX 77498 <br>
+<strong>USA</strong><br><br>
+							
+							<a href="#" class="read-more">VIEW MAP -</a> <br><br>
+							
+							Phone: <strong class="black-clr">+386 01 2345-6789</strong> <br>
+							Fax: <strong class="black-clr">+386 01 2345-6789</strong> <br>
+							Mail: <strong class="black-clr">info@144salon.com</strong> <br>
+							Web: <strong class="black-clr">www.144salon.com</strong>
+	
+		                </div>
+		                
+				    </div><!-- /sidebar -->
+    				    
+    			</div>
+    			
+                <div class="column col-sm-10 col-xs-11" id="main">
+
+    				
+    				<article class="inner-content">
+    					
+    					<div class="lined">
+    						<h2><span class="light">MAKE</span> AN APPOINTMENT</h2>
+    						<h5>Fields market with <span class="theme-clr">*</span> are required</h5>
+    						<span class="bolded-line"></span>
+    					</div>
+    					
+    					<p>Please visit our website at 144salon.com for information about our salon. You can make appointments through our website as well!</p>
+    					
+    						
+						<!--  = appointment form =  -->
+
+						<form action="#appointment-form" class="form appointment" method="post" id="appointment-form">
+    						<div class="row">
+    							<div class="span3">
+    								<div class="control-group">
+    									<label for="inpt-name" class="control-label">First and Last name<span class="theme-clr">*</span></label>
+    									<input type="text" name="name" value="" id="inpt-name" class="span3">
+    									    								</div>
+    							</div>
+    							<div class="span3">
+    								<div class="control-group">
+    									<label for="inpt-phone" class="control-label">Phone Number</label>
+    									<input type="tel" name="phone" value="" id="inpt-phone" class="span3">
+    									    								</div>
+    							</div>
+    							<div class="span3">
+    								<div class="control-group">
+    									<label for="inpt-email" class="control-label">E-mail Address<span class="theme-clr">*</span></label>
+    									<input type="email" name="email" value="" id="inpt-email" class="span3">
+    									    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="span2">
+    								<div class="control-group">
+	    								<label for="inpt-date">Date<span class="theme-clr">*</span></label>
+	    								<input type="text" name="date" value="" id="inpt-date" class="input-small add-datepicker hasDatepicker">
+	    								<a href="#" class="add-datepicker-icon"><span class="icon icons-calendar"></span></a>
+	    								    								</div>
+    							</div>
+    							<div class="span7">
+    								<label for="inpt-flexible" class="checkbox pad-top">
+    									<input type="checkbox" name="flexible" id="inpt-flexible" value="1" checked="">
+    									I am flexible on dates
+									</label>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="span9">
+    								<div class="control-group">
+    									<label for="txtarea" class="control-label">Type here if you have some special requirements<span class="theme-clr">*</span></label>
+    									<textarea name="message" rows="7" class="span9" id="txtarea"></textarea>
+    									    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="span9">
+    								<input type="hidden" value="1" name="submit">
+    								<button class="btn btn-theme no-bevel pull-right" type="submit">MAKE AN APPOINTMENT</button>
+    							</div>
+    						</div>
+    					</form>
+    					
+    					<!--  = /appointment form =  -->
+
+	
+	    					
+    				</article>
+    				
+    				
+    			</div>
+    		</div>
+    	</div>
+    </div>
+	
+
+
+
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/signin.js"></script>
+
+</body>
+
+</html>
