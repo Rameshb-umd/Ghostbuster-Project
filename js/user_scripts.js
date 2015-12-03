@@ -40,7 +40,9 @@ $('.input-group-btn').click(function(){
 				phone: {
 					required: true,
 					minlength: 10
-				}
+				},yearvalidation:{
+                    validatedates: true
+                }
 			},
 			messages: {
 				firstname: "Please enter your firstname",
@@ -52,12 +54,26 @@ $('.input-group-btn').click(function(){
                 phone: {
 					required: "Please enter a phone number",
 					email: "Please enter a valid phone number"
-				},
-				password: {
-					required: "Please provide a password",
-					minlength: "Your password must be at least 5 characters long"
-				}
+				},yearvalidation:{
+                    validatedates: "Please enter valid start and end time"
+                }
 			}
+    });
+    
+    jQuery.validator.addMethod("validatedates", function(value, element) {        
+        var startyear = $('#start_year').val();
+        var endyear = $('#end_year').val();
+        var startmonth = $('#start_month').val();
+        var endmonth = $('#end_month').val();
+        var starttime = $('#start_time').val();
+        var endtime = $('#end_time').val();
+        var startday = $('#start_date').val();
+        var endday = $('#end_date').val();
+        if(startyear!=""&&endyear!=""&&startmonth!="Month"&&endmonth!="Month"&&starttime!="Time"&&endtime!="Time"&&startday!="Day"&&endday!="Day"){
+            return true;
+        }else{
+            return false;
+        }
     });
         
     /***********************************/
@@ -75,18 +91,20 @@ $('.input-group-btn').click(function(){
       }
     });
     /***********************************/
-    var eventid;    
-    $("#confirmation").dialog({autoOpen : false,
-      buttons : {
-        "Confirm" : function() {
-         $('#calendar-my').fullCalendar('removeEvents',eventid);
-         $(this).dialog("close");
-        },
-        "Cancel" : function() {
-          $(this).dialog("close");
-        }
-      }
+        var eventid;    
+    $('#cancel_dialog').click(function(){
+        $("#confirmation_dialog").hide();
     });
+    
+    $('#confirm_dialog').click(function(){
+        $('#calendar-my').fullCalendar('removeEvents',eventid);
+        $("#confirmation_dialog").hide();
+    });
+    
+    $('#Okay_dialog').click(function(){
+        $("#message_dialog").hide();
+    });
+
     /***********************************/
 
 
@@ -161,7 +179,7 @@ $('.input-group-btn').click(function(){
           eventRender: function(event, element) {
           element.append( "<span class='closeon'>[Cancel Appointment]</span>" );
           element.find(".closeon").click(function() {
-                $("#dialog").dialog("open");
+                $("#confirmation_dialog").show();
                 eventid=event._id;
             });
         }
@@ -184,7 +202,7 @@ $('.input-group-btn').click(function(){
               var firstname = $('#firstname').val();
               $('#calendar').fullCalendar( 'renderEvent', {"title":firstname,"end":date_end,"start":date} );
               $('#calendar-my').fullCalendar( 'renderEvent', {"title":firstname,"end":date_end,"start":date} );
-              alert("successfully scheduled your appointment");
+              $("#message_dialog").show();
             }catch(e){
                 alert(e.message);
             }

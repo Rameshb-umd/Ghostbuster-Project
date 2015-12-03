@@ -50,6 +50,22 @@ $('#btn-chat').click(function(){
 });
 /******************************************/    
     
+  jQuery.validator.addMethod("validatedates", function(value, element) {        
+        var startyear = $('#start_year').val();
+        var endyear = $('#end_year').val();
+        var startmonth = $('#start_month').val();
+        var endmonth = $('#end_month').val();
+        var starttime = $('#start_time').val();
+        var endtime = $('#end_time').val();
+        var startday = $('#start_date').val();
+        var endday = $('#end_date').val();
+        if(startyear!=""&&endyear!=""&&startmonth!="Month"&&endmonth!="Month"&&starttime!="Time"&&endtime!="Time"&&startday!="Day"&&endday!="Day"){
+            return true;
+        }else{
+            return false;
+        }
+    });
+    
 $("#signupID").validate({
 			rules: {
 				firstname: "required",
@@ -61,7 +77,9 @@ $("#signupID").validate({
 				phone: {
 					required: true,
 					minlength: 10
-				}
+				},yearvalidation:{
+                    validatedates: true
+                }
 			},
 			messages: {
 				firstname: "Please enter your firstname",
@@ -73,11 +91,9 @@ $("#signupID").validate({
                 phone: {
 					required: "Please enter a phone number",
 					email: "Please enter a valid phone number"
-				},
-				password: {
-					required: "Please provide a password",
-					minlength: "Your password must be at least 5 characters long"
-				}
+				},yearvalidation:{
+                    validatedates: "Please enter valid start and end time"
+                }
 			},
         success: "valid"
 });
@@ -102,19 +118,27 @@ $(".well_schedule").dialog({autoOpen : false,
       }
 });
 
-var eventid;    
-$("#confirmation").dialog({autoOpen : false,
-      buttons : {
-        "Confirm" : function() {
-         $('#calendar').fullCalendar('removeEvents',eventid);
-         $(this).dialog("close");
-        },
-        "Cancel" : function() {
-          $(this).dialog("close");
-        }
-      }
-    });
-  
+var eventid;  
+
+$('#cancel_dialog').click(function(){
+    $("#confirmation_dialog").hide();
+});
+    
+$('#confirm_dialog').click(function(){
+    $('#calendar').fullCalendar('removeEvents',eventid);
+    $("#confirmation_dialog").hide();
+});
+
+$('#Okay_dialog').click(function(){
+    if(!popup){
+        window.location.href = "janine.html";  
+    }else{
+        $("#message_dialog").hide();
+        popup=false;
+     }    
+});
+    
+
 /******************************************/    
 
 var calendar = $('#calendar').fullCalendar({
@@ -151,7 +175,7 @@ var calendar = $('#calendar').fullCalendar({
           eventRender: function(event, element) {
             element.append( "<span class='closeon'>[Cancel Appointment]</span>" );
             element.find(".closeon").click(function() {
-                $("#dialog").dialog("open");
+                $("#confirmation_dialog").show();
                 eventid=event._id;
             });
           }
@@ -174,12 +198,8 @@ var calendar = $('#calendar').fullCalendar({
               date_end.setHours($('#end_time').val());
               var firstname = $('#firstname').val();
               $('#calendar').fullCalendar( 'renderEvent', {"title":firstname,"end":date_end,"start":date} );
-              alert("successfully scheduled your appointment");
-             if(!popup){
-                  window.location.href = "janine.html";  
-             }else{
-                 popup=false;
-             }    
+              $('#message_dialog').show();
+             
             }catch(e){
                 alert(e.message);
             }

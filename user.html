@@ -290,7 +290,7 @@
                                         <option value="30" class="">30</option>
                                         <option value="31" class="">31</option>
                                     </select>
-                                    <select class="" style="width:auto" id="end_time">
+                                    <select class="" style="width:auto" id="end_time" name="yearvalidation">
                                         <option value="Time" class="">Time am/pm</option>
                                         <option value="6" class="">6am</option>
                                         <option value="7" class="">7am</option>
@@ -324,10 +324,19 @@
             <!-- /col-9 -->
         </div>
     </div>
-    <div class="hidden" style="display:none;">
-        <div id="dialog">
-            Are you sure about this?
-        </div>
+    <div class="confirm" id="confirmation_dialog" style="display:none;">
+        <h1>Confirm your action</h1>
+        <p>Are you really sure that you want to cancel this appointment?</p>
+        <br>
+        <button id="cancel_dialog">Cancel</button>
+    <button autofocus id="confirm_dialog">Confirm</button>
+    </div>
+    
+    <div class="confirm" id="message_dialog" style="display:none;">
+        <h1>Message</h1>
+        <p>Your appointment have been scheduled successfully</p>
+        <br>
+    <button autofocus id="Okay_dialog">Okay</button>        
     </div>
     <!-- script references -->
     <script src="js/jquery-1.7.2.min.js"></script>
