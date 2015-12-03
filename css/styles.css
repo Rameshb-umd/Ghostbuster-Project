@@ -73,7 +73,7 @@ hr {
 
 .navbar-blue {
     border-width:0;
-	background-color:#421212;
+	background-color:#29526B;
     color:#ffffff;
     font-family:arial,sans-serif;
     top:0;
@@ -116,15 +116,16 @@ hr {
 #sidebar {
     padding:0px;
 	padding-top:15px;
-    -webkit-box-shadow: 11px -4px 11px -2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 11px -4px 11px -2px rgba(0,0,0,0.75);
-    box-shadow: 11px -4px 11px -2px rgba(0,0,0,0.75);
+    border-right: 2px solid #B9B9BB;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 #sidebar, #sidebar a, #sidebar-footer a {
-    color:#ffffff;
+    color:black;
+    background: url(../img/sliderbackground.jpg) no-repeat fixed; 
     background-color:transparent;
-	text-shadow:0 0 2px #000000;
     padding-left:5px;
 }
 #sidebar .nav li>a:hover {
@@ -184,7 +185,7 @@ hr {
   border-radius:2px;
 }
 #sidebar-footer {
-  background-color:#444;
+  background-color:none;
   position:absolute;
   bottom:5px;
   padding:5px;
@@ -295,7 +296,7 @@ small.text-muted {
   }
 
   .navbar-blue {
-	background-color:#421212;
+	background-color:#29526B;
     top:0;
     width:100%;
     position:relative;
@@ -461,7 +462,8 @@ html .fc, .fc table {
 	border: 1px solid #ccc
 }
 .fc-state-highlight {
-	background: #421212
+	background: #29526B;
+    color: white;
 }
 .fc-cell-overlay {
 	background: #9cf;
@@ -914,9 +916,14 @@ width: 16px;}
 
 .well{
     min-height:600px;
-    background-color:#421212;
+    background-color:#29526B;
 }
 
+.well_schedule{
+    background: url(../../img/body-bg.png);
+    color: #29526B;
+    font: 13px/1.7em 'Open Sans';
+}
 /***** Animation****/
 
 #Jarvis {
@@ -1100,4 +1107,8 @@ width: 16px;}
 }
 #typed{
     margin-top: 100px;
+}
+
+#sidebar a{
+    cursor: pointer;
 }

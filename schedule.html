@@ -1,188 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<head>
-<meta charset="utf-8">
-<title>Login - Bootstrap Admin Template</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes"> 
-    
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="css/font-awesome.css" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">    
-<link href="css/styles.css" rel="stylesheet" type="text/css">
-<link href="css/signin.css" rel="stylesheet" type="text/css">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>GhostBusters Interactive Web Portal - Ramesh Balasekaran</title>
+		<meta name="generator" content="Ramesh balasekaran" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <style>
+            form{
+                        font-family: 'Lato', sans-serif;
 
-</head>
+            }
 
-<body>
-	
-<div class="navbar navbar-green navbar-static-top">  	
-	<div class="navbar-inner">
-		<div class="container">
-            <a href="login.html" class="slidebar_logo_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GHOSTBUSTERS</a>
-		</div> <!-- /container -->		
-	</div> <!-- /navbar-inner -->	
-</div> <!-- /navbar -->
+                h1 {
+                  margin: 0 0 30px 0;
+                  text-align: center;
+                }
 
+                input[type="text"],
+                input[type="password"],
+                input[type="date"],
+                input[type="datetime"],
+                input[type="email"],
+                input[type="number"],
+                input[type="search"],
+                input[type="tel"],
+                input[type="time"],
+                input[type="url"],
+                textarea,
+                select {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0;
+                  outline: 0;
+                  padding: 10px;
+                  width: 100%;
+                  background-color: #E8E8E8;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 30px;
+                }
 
+                input[type="radio"],
+                input[type="checkbox"] {
+                  margin: 0 4px 8px 0;
+                }
 
-	
-	<div class="main-content">
-    	<div class="container">
-    		<div class="row">
-            
+                select {
+                  padding: 6px;
+                  height: 32px;
+                  border-radius: 2px;
+                }
+                input:focus{
+                    border: 1px solid #07DA0F;
+                }
+
+                .error{
+                    color: red;
+                }
+                button {
+                  padding: 19px 19px 18px 19px;
+                  color: #FFF;
+                  background-color: #4bc970;
+                  font-size: 18px;
+                  text-align: center;
+                  font-style: normal;
+                  border-radius: 5px;
+                  width: 100%;
+                  border: 1px solid #3ac162;
+                  border-width: 1px 1px 3px;
+                  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+                  margin-bottom: 10px;
+                  cursor: pointer;
+                }
+
+                fieldset {
+                  margin-bottom: 30px;
+                  border: none;
+                }
+
+                legend {
+                  font-size: 1.4em;
+                  margin-bottom: 10px;
+                }
+
+                label {
+                  display: block;
+                  margin-bottom: 2px;
+                }
+
+                label.light {
+                  font-weight: 300;
+                  display: inline;
+                }
+
+                .number {
+                  background-color: #5fcf80;
+                  color: #fff;
+                  height: 30px;
+                  width: 30px;
+                  display: inline-block;
+                  font-size: 0.8em;
+                  margin-right: 4px;
+                  line-height: 30px;
+                  text-align: center;
+                  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+                  border-radius: 100%;
+                }
+        </style>
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+          
+            <!-- sidebar -->
             <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
-    				
-				    <div class="left sidebar">
-				    	
-			    		<div class="opening-time sidebar-item visible-desktop">
-		                    <div class="time-table">
-		                        <h3><span class="icon icons-ornament-left"></span> <span class="light">OPENING</span> TIME <span class="icon icons-ornament-right"></span></h3>
-		                        <div class="inner-bg">
-		                            <dl class="week-day">
-		                                <dt>Monday</dt>
-		                                <dd>Appointment</dd>
-		                            </dl>
-		                            <dl class="week-day light-bg">
-		                                <dt>Tuesday</dt>
-		                                <dd>9:30am-7pm</dd>
-		                            </dl>
-		                            <dl class="week-day today">
-		                                <dt>Wednesday</dt>
-		                                <dd>9:30am-7pm</dd>
-		                            </dl>
-		                            <dl class="week-day light-bg">
-		                                <dt>Thursday</dt>
-		                                <dd>9:30am-7pm</dd>
-		                            </dl>
-		                            <dl class="week-day">
-		                                <dt>Friday</dt>
-		                                <dd>9:30am-7pm</dd>
-		                            </dl>
-		                            <dl class="week-day light-bg">
-		                                <dt>Saturday</dt>
-		                                <dd>9:30am-7pm</dd>
-		                            </dl>
-		                            <dl class="week-day closed">
-		                                <dt>Sunday</dt>
-		                                <dd>Appointment</dd>
-		                            </dl>
-		                        </div>
-		                    </div>
-				    	</div><!-- /opening time -->
-		                
-		                <div class="sidebar-item">
-		                	<div class="lined">
-		                		<h2><span class="light">OUR</span> ADDRESS</h2>
-		                		<h5>Where can you find us?</h5>
-		                		<span class="bolded-line"></span>
-		                	</div>
-		                	<strong>144 Hair Salon</strong> <br>
-5022 HWY 90A <br>
-SUGAR LAND, TX 77498 <br>
-<strong>USA</strong><br><br>
-							
-							<a href="#" class="read-more">VIEW MAP -</a> <br><br>
-							
-							Phone: <strong class="black-clr">+386 01 2345-6789</strong> <br>
-							Fax: <strong class="black-clr">+386 01 2345-6789</strong> <br>
-							Mail: <strong class="black-clr">info@144salon.com</strong> <br>
-							Web: <strong class="black-clr">www.144salon.com</strong>
-	
-		                </div>
-		                
-				    </div><!-- /sidebar -->
-    				    
-    			</div>
-    			
-                <div class="column col-sm-10 col-xs-11" id="main">
+               
+              	<ul class="nav">
+          			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-expand"></i></a></li>
+            	</ul>
+               
+                <ul class="nav hidden-xs" id="lg-menu">
+                    <a href="index.html" class="slidebar_logo"></a>
+                    <li ><a href="user.html"><i class="glyphicon glyphicon-home-gh"></i> Home</a></li>
+                    <li class="active"><a href="#"><i class="glyphicon glyphicon-schedule-gh"></i> Schedule an Appointment </a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-myaccount-gh"></i> View My Appointment</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-contact-gh"></i> Contact</a></li>
+                </ul>
+                <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="http://www.rameshbalasekaran.com"> <h6>Copyright <br> Ramesh Balasekaran</h6> </a>
+                    </li>
+                </ul>
+              
+              	<!-- tiny only nav-->
+              <ul class="nav visible-xs" id="xs-menu">
+                  	<li><a href="user.html" class="text-center"><i class="glyphicon glyphicon-home-gh"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-schedule-gh"></i></a></li>
+                  	<li><a href="#" class="text-center"><i class="glyphicon glyphicon-myaccount-gh"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-contact-gh"></i></a></li>
+                </ul>
+              
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+                
+                <!-- top nav -->
+              	<div class="navbar navbar-blue navbar-static-top">  
+                    <div class="navbar-header">
+                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".top-navbar-collapse">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+                      </button>
+                  	</div>
+                  	<nav class="collapse navbar-collapse top-navbar-collapse" role="navigation">
+                    <div class="navbar-form navbar-left">
+                        <div class="input-group input-group-sm" style="max-width:360px;">
+                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                          </div>
+                        </div>
+                    </div> 
+                    <ul class="nav navbar-nav">
+                      <li>
+                        <a href="#" id="help"><span class="badge">Help</span></a>                     
+                      </li>
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="index.html">Logout</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  	</nav>
+                </div>
+                <!-- /top nav -->
+              
+<div class="full well_schedule">                      
+                        <!-- content -->                      
+<div class="row">
+    <div class="col-sm-12 calendar">
+             <form action="#" method="post" id="signupID">
+      
+                <h3> Make an Appointment</h3>
+        
+                <fieldset>
+                  <label for="firstname">First Name:</label>
+                  <input type="text" id="firstname" name="firstname" value="">
+                    
+                  <label for="lastname">Last Name:</label>
+                  <input type="text" id="lastname" name="lastname" value="">
+                    
+                  <label for="phone">Phone:</label>
+                  <input type="text" id="phone" name="phone" value="">
 
-    				
-    				<article class="inner-content">
-    					
-    					<div class="lined">
-    						<h2><span class="light">MAKE</span> AN APPOINTMENT</h2>
-    						<h5>Fields market with <span class="theme-clr">*</span> are required</h5>
-    						<span class="bolded-line"></span>
-    					</div>
-    					
-    					<p>Please visit our website at 144salon.com for information about our salon. You can make appointments through our website as well!</p>
-    					
-    						
-						<!--  = appointment form =  -->
+                  <label for="mail">Email:</label>
+                  <input type="email" id="mail" name="mail" value="">
 
-						<form action="#appointment-form" class="form appointment" method="post" id="appointment-form">
-    						<div class="row">
-    							<div class="span3">
-    								<div class="control-group">
-    									<label for="inpt-name" class="control-label">First and Last name<span class="theme-clr">*</span></label>
-    									<input type="text" name="name" value="" id="inpt-name" class="span3">
-    									    								</div>
-    							</div>
-    							<div class="span3">
-    								<div class="control-group">
-    									<label for="inpt-phone" class="control-label">Phone Number</label>
-    									<input type="tel" name="phone" value="" id="inpt-phone" class="span3">
-    									    								</div>
-    							</div>
-    							<div class="span3">
-    								<div class="control-group">
-    									<label for="inpt-email" class="control-label">E-mail Address<span class="theme-clr">*</span></label>
-    									<input type="email" name="email" value="" id="inpt-email" class="span3">
-    									    								</div>
-    							</div>
-    						</div>
-    						<div class="row">
-    							<div class="span2">
-    								<div class="control-group">
-	    								<label for="inpt-date">Date<span class="theme-clr">*</span></label>
-	    								<input type="text" name="date" value="" id="inpt-date" class="input-small add-datepicker hasDatepicker">
-	    								<a href="#" class="add-datepicker-icon"><span class="icon icons-calendar"></span></a>
-	    								    								</div>
-    							</div>
-    							<div class="span7">
-    								<label for="inpt-flexible" class="checkbox pad-top">
-    									<input type="checkbox" name="flexible" id="inpt-flexible" value="1" checked="">
-    									I am flexible on dates
-									</label>
-    							</div>
-    						</div>
-    						<div class="row">
-    							<div class="span9">
-    								<div class="control-group">
-    									<label for="txtarea" class="control-label">Type here if you have some special requirements<span class="theme-clr">*</span></label>
-    									<textarea name="message" rows="7" class="span9" id="txtarea"></textarea>
-    									    								</div>
-    							</div>
-    						</div>
-    						<div class="row">
-    							<div class="span9">
-    								<input type="hidden" value="1" name="submit">
-    								<button class="btn btn-theme no-bevel pull-right" type="submit">MAKE AN APPOINTMENT</button>
-    							</div>
-    						</div>
-    					</form>
-    					
-    					<!--  = /appointment form =  -->
+                  <div class="btn-toolbar" style="margin: 0;">
+                    <div class="btn-group">
+                        <label for="starttime" class="">Start Time</label>
+                        <select class="" style="width:auto" id="month">
+                            <option value="Month" class="">- Month -</option>
+                            <option value="January" class="">January</option>
+                            <option value="February" class="">February</option>
+                            <option value="March" class="">March</option>
+                            <option value="April" class="">April</option>
+                            <option value="May" class="">May</option>
+                            <option value="June" class="">June</option>
+                            <option value="July" class="">July</option>
+                            <option value="August" class="">August</option>
+                            <option value="September" class="">September</option>
+                            <option value="October" class="">October</option>
+                            <option value="November" class="">November</option>
+                            <option value="December" class="">December</option>
+                        </select>
+                        <select class="" style="width:auto" starttime>
+                            <option value="Day" class="">- Day -</option>
+                            <option value="01" class="">1</option>
+                            <option value="02" class="">2</option>
+                            <option value="03" class="">3</option>
+                            <option value="03" class="">4</option>
+                            <option value="03" class="">5</option>
+                            <option value="03" class="">6</option>
+                            <option value="03" class="">7</option>
+                            <option value="03" class="">8</option>
+                            <option value="03" class="">9</option>
+                            <option value="03" class="">10</option>
+                            <option value="03" class="">11</option>
+                            <option value="03" class="">12</option>
+                            <option value="03" class="">13</option>
+                            <option value="03" class="">14</option>
+                            <option value="03" class="">15</option>
+                            <option value="03" class="">16</option>
+                            <option value="03" class="">17</option>
+                            <option value="03" class="">18</option>
+                            <option value="03" class="">19</option>
+                            <option value="03" class="">20</option>
+                            <option value="03" class="">21</option>
+                            <option value="03" class="">22</option>
+                            <option value="03" class="">23</option>
+                            <option value="03" class="">24</option>
+                            <option value="03" class="">25</option>
+                            <option value="03" class="">26</option>
+                            <option value="03" class="">27</option>
+                            <option value="03" class="">28</option>
+                            <option value="03" class="">29</option>
+                            <option value="03" class="">30</option>
+                            <option value="03" class="">31</option>
+                        </select>
+                        <select class="" style="width:auto">
+                            <option value="Time" class="">Time am/pm</option>
+                            <option value="10am" class="">10:00am</option>
+                            <option value="1030am" class="">10:30am</option>
+                            <option value="11am" class="">11:00am</option>
+                            <option value="1130am" class="">11:30am</option>
+                            <option value="12pm" class="">12:00pm</option>
+                            <option value="1230pm" class="">12:30pm</option>
+                            <option value="1pm" class="">1:00pm</option>
+                            <option value="130pm" class="">1:30pm</option>
+                            <option value="2pm" class="">2:00pm</option>
+                            <option value="230pm" class="">2:30pm</option>
+                            <option value="3pm" class="">3:00pm</option>
+                            <option value="330pm" class="">3:30pm</option>
+                            <option value="4pm" class="">4:00pm</option>
+                            <option value="430pm" class="">4:30pm</option>
+                        </select>
+                        <label class="">End Time</label>
+                        <select class="" style="width:auto">
+                            <option value="Month" class="">- Month -</option>
+                            <option value="January" class="">January</option>
+                            <option value="February" class="">February</option>
+                            <option value="March" class="">March</option>
+                            <option value="April" class="">April</option>
+                            <option value="May" class="">May</option>
+                            <option value="June" class="">June</option>
+                            <option value="July" class="">July</option>
+                            <option value="August" class="">August</option>
+                            <option value="September" class="">September</option>
+                            <option value="October" class="">October</option>
+                            <option value="November" class="">November</option>
+                            <option value="December" class="">December</option>
+                        </select>
+                        <select class="" style="width:auto">
+                            <option value="Day" class="">- Day -</option>
+                            <option value="01" class="">1</option>
+                            <option value="02" class="">2</option>
+                            <option value="03" class="">3</option>
+                            <option value="03" class="">4</option>
+                            <option value="03" class="">5</option>
+                            <option value="03" class="">6</option>
+                            <option value="03" class="">7</option>
+                            <option value="03" class="">8</option>
+                            <option value="03" class="">9</option>
+                            <option value="03" class="">10</option>
+                            <option value="03" class="">11</option>
+                            <option value="03" class="">12</option>
+                            <option value="03" class="">13</option>
+                            <option value="03" class="">14</option>
+                            <option value="03" class="">15</option>
+                            <option value="03" class="">16</option>
+                            <option value="03" class="">17</option>
+                            <option value="03" class="">18</option>
+                            <option value="03" class="">19</option>
+                            <option value="03" class="">20</option>
+                            <option value="03" class="">21</option>
+                            <option value="03" class="">22</option>
+                            <option value="03" class="">23</option>
+                            <option value="03" class="">24</option>
+                            <option value="03" class="">25</option>
+                            <option value="03" class="">26</option>
+                            <option value="03" class="">27</option>
+                            <option value="03" class="">28</option>
+                            <option value="03" class="">29</option>
+                            <option value="03" class="">30</option>
+                            <option value="03" class="">31</option>
+                        </select>
+                        <select class="" style="width:auto">
+                            <option value="Time" class="">Time am/pm</option>
+                            <option value="10am" class="">10:00am</option>
+                            <option value="1030am" class="">10:30am</option>
+                            <option value="11am" class="">11:00am</option>
+                            <option value="1130am" class="">11:30am</option>
+                            <option value="12pm" class="">12:00pm</option>
+                            <option value="1230pm" class="">12:30pm</option>
+                            <option value="1pm" class="">1:00pm</option>
+                            <option value="130pm" class="">1:30pm</option>
+                            <option value="2pm" class="">2:00pm</option>
+                            <option value="230pm" class="">2:30pm</option>
+                            <option value="3pm" class="">3:00pm</option>
+                            <option value="330pm" class="">3:30pm</option>
+                            <option value="4pm" class="">4:00pm</option>
+                            <option value="430pm" class="">4:30pm</option>
+                        </select>
+                      </div>
+                    </div>
+                     <label for="message" class="">Message</label>
+                    <textarea name="message" id="message" class="span4" rows="10" style="width: 96%"></textarea>
+                    <button type="submit" class="btn btn-warning" contenteditable="false" id="submit">Submit</button>
 
-	
-	    					
-    				</article>
-    				
-    				
-    			</div>
-    		</div>
-    	</div>
+                </fieldset>               
+                 </form>
+        </div>
+        <div class="col-sm-3 hidden helpbar">
+                            <div class="sidebar-nav-fixed helpbar">
+                                <div class="well">
+                                    <div id="Jarvis">
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                        <div><div></div></div>
+                                    </div>
+                                    <div id="typed"><label id="Smiley_Message"></label></div>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            </div>
+                        <!--/sidebar-nav-fixed --> 
+                       </div><!--/row-->                      
+                    </div><!-- /col-9 -->  
+            </div>
+        </div>
     </div>
-	
+</div>
 
 
 
+	<!-- script references -->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/fullcalendar.min.js"></script> 
+        <script language="javascript" type="text/javascript" src="js/speechrecognization.js"></script>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+        <script src="js/typed.js"></script>
+        <script src="js/JSONSelect.js"></script>
+        <script src="js/user_scripts.js"></script>
+        <script src="js/jquery.validate.js"></script>
 
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/signin.js"></script>
-
-</body>
-
+	</body>
 </html>

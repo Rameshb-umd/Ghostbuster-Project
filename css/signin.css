@@ -3,10 +3,16 @@ Bootstrap Admin Template by EGrappler.com
 ------------------------------------------------------------------*/
 
 
-
+html { 
+  background: url(../img/bigbackgroun.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 /** Base Body Styles **/
-body{ background: url(../../img/body-bg.png); color:#838383; font: 13px/1.7em 'Open Sans';}
+body{ background: none; color:#838383; font: 13px/1.7em 'Open Sans';}
 
 
 .account-container {

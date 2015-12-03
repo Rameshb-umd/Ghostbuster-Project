@@ -26,7 +26,36 @@ $('.input-group-btn').click(function(){
                   
 });  
 
-
+    $("#signupID").validate({
+			rules: {
+				firstname: "required",
+				lastname: "required",
+				email: {
+					required: true,
+					email: true
+				},
+				phone: {
+					required: true,
+					minlength: 10
+				}
+			},
+			messages: {
+				firstname: "Please enter your firstname",
+				lastname: "Please enter your lastname",
+				email: {
+					required: "Please enter a email address",
+					email: "Please enter a valid email address"
+				},
+                phone: {
+					required: "Please enter a phone number",
+					email: "Please enter a valid phone number"
+				},
+				password: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 5 characters long"
+				}
+			}
+    });
         
 });
 
@@ -82,10 +111,6 @@ if (annyang) {
         responsiveVoice.speak(speechs[1],"US English Female", {onstart: StartCallback});
         showhelp();
     },
-     'open chat': function() { 
-        responsiveVoice.speak(speechs[5],"US English Female", {onstart: StartCallback});
-        showchat();
-    },
      'thank you': function() { 
         responsiveVoice.speak(speechs[2],"US English Female",{onstart: StartCallback});
         hidehelp();
@@ -107,14 +132,37 @@ if (annyang) {
                             'callback': gotomonth},
      'go to :year': {'regexp': /^go to (2015|2016|2010|2011|2012|2013|2014|2017)/, 
                             'callback': gotoyear},
-     'send': function(){
-         $('#btn-chat').trigger("click");
+     'submit': function(){
+         $('#submit').trigger("click");
      },
-     'input *term': function(term){
-         var value = $('#chat-btn-input').val();
-         $('#chat-btn-input').val(value+" "+term);
-     }
-
+     'first *term': function(term){
+         $('#firstname').val(term);
+     },
+     'last *term': function(term){
+         $('#lastname').val(term);
+     },
+     'phone *term': function(term){
+         $('#phone').val(term);
+     },
+     'email *term': function(term){
+         $('#mail').val(term);
+     },
+     'message *term': function(term){
+         var value = $('#message').val();
+         $('#message').val(value+" "+term);
+     },
+     'clear message': function(term){
+         $('#message').val("");
+     },
+     'schedule appointment': function(term){
+         window.location.href = "schedule.html";   
+     },
+     'logout': function(term){
+         window.location.href = "index.html";   
+     },
+     'go to home': function(term){
+         window.location.href = "user.html";   
+     },
   };
     annyang.addCallback('resultNoMatch', function (userSaid, commandText, phrases) {
         try{
